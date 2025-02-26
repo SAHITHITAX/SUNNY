@@ -255,7 +255,7 @@ max-width: 100px;
         let assignOptions = [...new Set(data.map(row => row.assign).filter(Boolean))];
         let statusOptions = [...new Set(data.map(row => row.status).filter(Boolean))];
 
-        let tableHeaders = ["Name", "Phone", "Email", "Work", "Assign To", "Status", "Remark", "Actions", "WhatsApp"];
+        let tableHeaders = ["Name", "Phone", "Email", "Work", "Assign To", "Status", "Remark", "Actions", "WhatsApp", "Msg to Assignee" ];
 
         let output = `
         <style>
@@ -349,6 +349,10 @@ max-width: 100px;
             <td>
                 <button style="background-color: green; color: white;" onclick="sendWhatsApp('${row.phone}', '${message}')">Send WhatsApp</button>
                 
+            </td>
+	    <td>
+                <button style="background-color: green; color: white;" onclick="sendWhatsApp('919381536952', 'Update the status of ${row.name} *${row.work}* work  ')">Msg to Assignee</button>
+	
             </td>
         </tr>
     `;
