@@ -442,11 +442,8 @@ function filterTable() {
 
         window.onload = fetchData;
 
-function editEntry(id, name, phone, email, work, assign, status, remark) {
-    const newName = prompt("Edit Name:", name);
-    const newPhone = prompt("Edit Phone:", phone);
-    const newEmail = prompt("Edit Email:", email);
-    const newWork = prompt("Edit Work:", work);
+function editEntry( assign, status, remark) {
+    
     const newAssign = prompt("Edit Assign To:", assign);
     const newStatus = prompt("Edit Status:", status);
     const newRemark = prompt("Edit Remark:", remark);
@@ -455,11 +452,7 @@ function editEntry(id, name, phone, email, work, assign, status, remark) {
         method: "POST",
         body: new URLSearchParams({
             method: "PUT",
-            id: id,
-            name: newName,
-            phone: newPhone,
-            email: newEmail,
-            work: newWork,
+           
             assign: newAssign,
             status: newStatus,
             remark: newRemark
