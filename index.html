@@ -342,8 +342,8 @@ max-width: 100px;
             <td>${row.status || ""}</td>
             <td class="remark-cell">${row.remark || ""}</td>
             <td>
-                <button onclick="editEntry(${row.id}, '${row.name}', '${row.phone}', '${row.email}', '${row.work}', '${row.assign}', '${row.status}', '${row.remark || ""}')">Edit</button>
-                <button onclick="deleteEntry(${row.id})">Delete</button>
+                <button onclick="editEntry(${row.id}, '${row.work}', '${row.assign}', '${row.status}', '${row.remark || ""}')">Edit</button>
+               
             </td>
             <td>
                 <button style="background-color: green; color: white;" onclick="sendWhatsApp('${row.phone}', '${message}')">Send WhatsApp</button>
