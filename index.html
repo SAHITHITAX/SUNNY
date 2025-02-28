@@ -342,7 +342,7 @@ max-width: 100px;
             <td>${row.status || ""}</td>
             <td class="remark-cell">${row.remark || ""}</td>
             <td>
-                <button onclick="editEntry(${row.id}, '${row.work}', '${row.assign}', '${row.status}', '${row.remark || ""}')">Edit</button>
+                <button onclick="editEntry(${row.id}, '${row.assign}', '${row.status}', '${row.remark || ""}')">Edit</button>
                
             </td>
             <td>
@@ -443,10 +443,8 @@ function filterTable() {
         window.onload = fetchData;
 
 function editEntry(id, name, phone, email, work, assign, status, remark) {
-    const newName = prompt("Edit Name:", name);
-    const newPhone = prompt("Edit Phone:", phone);
-    const newEmail = prompt("Edit Email:", email);
-    const newWork = prompt("Edit Work:", work);
+    
+   
     const newAssign = prompt("Edit Assign To:", assign);
     const newStatus = prompt("Edit Status:", status);
     const newRemark = prompt("Edit Remark:", remark);
@@ -456,10 +454,7 @@ function editEntry(id, name, phone, email, work, assign, status, remark) {
         body: new URLSearchParams({
             method: "PUT",
             id: id,
-            name: newName,
-            phone: newPhone,
-            email: newEmail,
-            work: newWork,
+        
             assign: newAssign,
             status: newStatus,
             remark: newRemark
